@@ -29,4 +29,7 @@ public class User {
 		this.id = id;
 		this.username = username;
 	}
+	/*
+	 * public User(String username) { super(); this.username = username; }
+	 */
 }
