@@ -16,7 +16,6 @@ import com.example.user.UserController;
 @RequestMapping // empty string by default
 public class IndexController {
 	private static Logger logger = LoggerFactory.getLogger(UserController.class);
-	private List<User> usersDb = new ArrayList<>();
 	
 	@GetMapping // This will map to localhost:8080 but only if @RequestMapping over class name maps to empty string
 	public String showIndex() {
