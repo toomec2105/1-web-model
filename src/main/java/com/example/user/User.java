@@ -1,5 +1,7 @@
 package com.example.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 //import lombok.NoArgsConstructor;
@@ -8,6 +10,8 @@ import lombok.Data;
 @Data 
 @lombok.NoArgsConstructor 
 
+@JsonIgnoreProperties(ignoreUnknown = false)
+// Why not working?
 public class User {
 
 	private Long id;
