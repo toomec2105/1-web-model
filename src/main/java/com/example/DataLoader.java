@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.example.game.GameController;
 import com.example.user.UserController;
 
 @Component
@@ -15,12 +16,16 @@ public class DataLoader implements CommandLineRunner {
 	
 	@Autowired
 	private UserController userController;
+	
+	@Autowired
+	private GameController gameController;
 
 	
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("----------------------> Populating db");
 		userController.populateDb();
+		gameController.populateDb();
 	}
 
 }
