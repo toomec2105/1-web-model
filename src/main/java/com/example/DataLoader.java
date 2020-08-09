@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.example.game.GameController;
 import com.example.user.UserController;
 
+
 @Component
 public class DataLoader implements CommandLineRunner {
 	
@@ -17,8 +18,9 @@ public class DataLoader implements CommandLineRunner {
 	@Autowired
 	private UserController userController;
 	
-	@Autowired
-	private GameController gameController;
+	
+	  @Autowired private GameController gameController;
+	 
 
 	
 	@Override
