@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@RequestMapping maps all http methods
 public class UserController {
 	private static Logger logger = LoggerFactory.getLogger(UserController.class);
-	private List<User> usersDb = new ArrayList<>();
+	 List<User> usersDb = new ArrayList<>();
 
 	@GetMapping(path = "/all")
 	public List<User> showAllUsers() {
@@ -43,6 +43,7 @@ public class UserController {
 
 	@DeleteMapping("/delete/{id}")
 	public User deleteUser(@PathVariable String id) {
+		logger.info("----------------------> id for delete: " + id);
 		User deleted = null;
 		try {
 			deleted = findByIdInternal(Long.parseLong(id));

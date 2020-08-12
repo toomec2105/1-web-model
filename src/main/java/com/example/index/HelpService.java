@@ -1,9 +1,9 @@
-package com.example.user;
+package com.example.index;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserHelpService {
+public class HelpService {
 	public String getHelp(String topic) {
 		String output = "";
 		switch (topic) {

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.user.HelpResponse;
 import com.example.user.UserController;
-import com.example.user.UserHelpService;
 
 @RestController
 @RequestMapping // empty string by default
@@ -18,7 +17,7 @@ public class IndexController {
 	private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
-	private UserHelpService userHelpService;
+	private HelpService userHelpService;
 
 	@GetMapping // This will map to localhost:8080 but only if @RequestMapping over class name
 				// maps to empty string
