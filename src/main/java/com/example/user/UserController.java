@@ -20,18 +20,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	private static Logger logger = LoggerFactory.getLogger(UserController.class);
 	private List<User> usersDb = new ArrayList<>();
-	
-	@GetMapping(path="/all")
+
+	@GetMapping(path = "/all")
 	public List<User> showAllUsers() {
 		logger.info("----------------------> Entering /all");
-		// if list.size()=0 frontend will deal with it 
+		// if list.size()=0 frontend will deal with it
 		return usersDb;
 	}
 
 	// problem : user data is not sent
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user) {
-		
+
 		// problem1: what if user has non-existant properties?
 		logger.info("----------------------> Entering /add");
 		Long id = (long) usersDb.size() + 1;
@@ -46,8 +46,8 @@ public class UserController {
 		User deleted = null;
 		try {
 			deleted = findByIdInternal(Long.parseLong(id));
-		} catch(NumberFormatException e){
-			// problem: app crashes 
+		} catch (NumberFormatException e) {
+			// problem: app crashes
 			// solutions: redirect to some error page, throw a custom exeption
 			e.printStackTrace();
 		}
@@ -60,7 +60,7 @@ public class UserController {
 	public User updateUser(@RequestBody User user) {
 		User updatedUser = new User(user.getId(), user.getUsername());
 		User toUpdate = findByIdInternal(user.getId());
-		
+
 		return usersDb.set(usersDb.indexOf(toUpdate), updatedUser);
 	}
 
